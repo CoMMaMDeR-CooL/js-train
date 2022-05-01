@@ -18,18 +18,18 @@
 
 
 
-const numberOfFilms = +prompt('daj film','');
-console.log(numberOfFilms);
+// const numberOfFilms = +prompt('daj film','');
+// console.log(numberOfFilms);
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies : {},
-    actors : {},
-    genres: [],
-    privat : false,
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies : {},
+//     actors : {},
+//     genres: [],
+//     privat : false,
     
 
-};
+// };
 const movieNameA = prompt('nazvanie', ''),
     movieRatingA = +prompt('ocenka', ''),
     movieNameB = prompt('nazvanie', ''),
