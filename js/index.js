@@ -30,13 +30,13 @@
     
 
 // };
-const movieNameA = prompt('nazvanie', ''),
-    movieRatingA = +prompt('ocenka', ''),
-    movieNameB = prompt('nazvanie', ''),
+// const movieNameA = prompt('nazvanie', ''),
+//     movieRatingA = +prompt('ocenka', ''),
+//     movieNameB = prompt('nazvanie', ''),
     
-    movieRatingB = +prompt('ocenka', '');
-personalMovieDB.movies[movieNameA] = movieRatingA;
-personalMovieDB.movies[movieNameB] = movieRatingB;
-console.log(personalMovieDB);
+//     movieRatingB = +prompt('ocenka', '');
+// personalMovieDB.movies[movieNameA] = movieRatingA;
+// personalMovieDB.movies[movieNameB] = movieRatingB;
+// console.log(personalMovieDB);
  
 
