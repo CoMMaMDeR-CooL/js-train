@@ -1,182 +1,267 @@
-'use strict';
+// 'use strict';
 
-function calculateVolumeAndArea(num) {
-  if (typeof num !== 'number' || num <= 0)
-    return 'При вычислении произошла ошибка';
-  const res = num * num * num;
-  const res2 = num * num * 6;
-  return `Обьем куба: ${res}, площадь всей поверхности: ${res2}`;
-}
-calculateVolumeAndArea(5);
+// function calculateVolumeAndArea(num) {
+//   if (typeof num !== 'number' || num <= 0)
+//     return 'При вычислении произошла ошибка';
+//   const res = num * num * num;
+//   const res2 = num * num * 6;
+//   return `Обьем куба: ${res}, площадь всей поверхности: ${res2}`;
+// }
+// calculateVolumeAndArea(5);
 
-function getCoupeNumber(num) {
-  if (typeof num !== 'number') {
-    return 'Ошибка. Проверьте правильность введенного номера места';
-  } else if (num < 1 || num > 36) {
-    return 'Таких мест в вагоне не существует';
-  }
-  const res = num / 4;
-  return Math.ceil(res);
-}
-getCoupeNumber(35);
+// function getCoupeNumber(num) {
+//   if (typeof num !== 'number') {
+//     return 'Ошибка. Проверьте правильность введенного номера места';
+//   } else if (num < 1 || num > 36) {
+//     return 'Таких мест в вагоне не существует';
+//   }
+//   const res = num / 4;
+//   return Math.ceil(res);
+// }
+// getCoupeNumber(35);
 
-function getTimeFromMinutes(num) {
-  if (!Number.isInteger(num) || num < 0) return 'Ошибка, проверьте данные';
-  const h = Math.floor(num / 60);
-  const m = num % 60;
-  let str = '';
+// function getTimeFromMinutes(num) {
+//   if (!Number.isInteger(num) || num < 0) return 'Ошибка, проверьте данные';
+//   const h = Math.floor(num / 60);
+//   const m = num % 60;
+//   let str = '';
 
-  switch (h) {
-    case 0:
-      str = 'часов';
-      break;
-    case 1:
-      str = 'час';
-      break;
-    case 2:
-    case 3:
-    case 4:
-      str = 'часа';
-      break;
-    default:
-      str = 'часов';
-  }
-  return `Это ${h} ${str} и ${m} минут`;
-}
-getTimeFromMinutes(600);
+//   switch (h) {
+//     case 0:
+//       str = 'часов';
+//       break;
+//     case 1:
+//       str = 'час';
+//       break;
+//     case 2:
+//     case 3:
+//     case 4:
+//       str = 'часа';
+//       break;
+//     default:
+//       str = 'часов';
+//   }
+//   return `Это ${h} ${str} и ${m} минут`;
+// }
+// getTimeFromMinutes(600);
 
-function findMaxNumber(a, b, c, d) {
-  const arr = [a, b, c, d];
-  console.log(arr);
-  if (
-    typeof a !== 'number' ||
-    typeof b !== 'number' ||
-    typeof c !== 'number' ||
-    typeof d !== 'number' ||
-    arr.length < 4
-  )
-    console.log(0);
+// function findMaxNumber(a, b, c, d) {
+//   const arr = [a, b, c, d];
+//   console.log(arr);
+//   if (
+//     typeof a !== 'number' ||
+//     typeof b !== 'number' ||
+//     typeof c !== 'number' ||
+//     typeof d !== 'number' ||
+//     arr.length < 4
+//   )
+//     console.log(0);
 
-  console.log(Math.max.apply(null, arr));
-}
-findMaxNumber(1, 2, 4, 3);
+//   console.log(Math.max.apply(null, arr));
+// }
+// findMaxNumber(1, 2, 4, 3);
 
-function fib(num) {
-  let res = [0, 1];
-  // console.log()
-  for (let i = 0; i <= num - 3; i += 1) {
-    res.push(res[i] + res[i + 1]);
-  }
-  //   for (let i = 0; i <= num; i += 1) {
-  //     for (let j = 1; j <= num; j += 1) {
-  //       //   res.push(res[i] + res[j]);
-  //       console.log(res[i] + res[j]);
-  //     }
-  //   }
-  console.log(res);
-}
-fib(4);
-function fib(num) {
-  let res = [0, 1];
-  let str = '';
-  if (num < 0) return 0;
-  if (num === 0) return '0';
-  // console.log()
-  for (let i = 0; i < num - 2; i += 1) {
-    res.push(res[i] + res[i + 1]);
-  }
-  res.forEach(element => {
-    str += `${element},`;
-  });
-  console.log(str);
+// function fib(num) {
+//   let res = [0, 1];
+//   // console.log()
+//   for (let i = 0; i <= num - 3; i += 1) {
+//     res.push(res[i] + res[i + 1]);
+//   }
+//   //   for (let i = 0; i <= num; i += 1) {
+//   //     for (let j = 1; j <= num; j += 1) {
+//   //       //   res.push(res[i] + res[j]);
+//   //       console.log(res[i] + res[j]);
+//   //     }
+//   //   }
+//   console.log(res);
+// }
+// fib(4);
+// function fib(num) {
+//   let res = [0, 1];
+//   let str = '';
+//   if (num < 0) return 0;
+//   if (num === 0) return '0';
+//   // console.log()
+//   for (let i = 0; i < num - 2; i += 1) {
+//     res.push(res[i] + res[i + 1]);
+//   }
+//   res.forEach(element => {
+//     str += `${element},`;
+//   });
+//   console.log(str);
 
-  console.log(res);
-}
-fib(6);
-function fib(num) {
-  let res = [0, 1];
-  let str = '';
-  if (num === 1) return '0';
-  if (typeof num !== 'number' || num === 0) return '';
+//   console.log(res);
+// }
+// fib(6);
+// function fib(num) {
+//   let res = [0, 1];
+//   let str = '';
+//   if (num === 1) return '0';
+//   if (typeof num !== 'number' || num === 0) return '';
 
-  for (let i = 0; i < num - 2; i += 1) {
-    res.push(res[i] + res[i + 1]);
-  }
-  res.forEach(element => {
-    str += `${element}`;
-  });
-  console.log(str.split('').join(' '));
-}
-fib(6);
+//   for (let i = 0; i < num - 2; i += 1) {
+//     res.push(res[i] + res[i + 1]);
+//   }
+//   res.forEach(element => {
+//     str += `${element}`;
+//   });
+//   console.log(str.split('').join(' '));
+// }
+// fib(6);
 
-const personalPlanPeter = {
-  name: 'Peter',
-  age: '29',
-  skills: {
-    languages: ['ru', 'eng'],
-    programmingLangs: {
-      js: '20%',
-      php: '10%',
-    },
-    exp: '1 month',
-  },
-};
+// const personalPlanPeter = {
+//   name: 'Peter',
+//   age: '29',
+//   skills: {
+//     languages: ['ru', 'eng'],
+//     programmingLangs: {
+//       js: '20%',
+//       php: '10%',
+//     },
+//     exp: '1 month',
+//   },
+// };
 
-function showExperience(plan) {
-  console.log(plan.skills.exp);
-}
+// function showExperience(plan) {
+//   console.log(plan.skills.exp);
+// }
 
-showExperience(personalPlanPeter);
+// showExperience(personalPlanPeter);
 
-function showProgrammingLangs(plan) {
-  const { age } = plan.age;
-  const { programmingLangs } = plan.skills;
-  let string = '';
-  for (k in programmingLangs) {
-    string += `Язык ${k} изучен на ${programmingLangs[key]}\n`;
-  }
-  return string;
-}
+// function showProgrammingLangs(plan) {
+//   const { age } = plan.age;
+//   const { programmingLangs } = plan.skills;
+//   let string = '';
+//   for (k in programmingLangs) {
+//     string += `Язык ${k} изучен на ${programmingLangs[key]}\n`;
+//   }
+//   return string;
+// }
 
-showProgrammingLangs(personalPlanPeter);
+// showProgrammingLangs(personalPlanPeter);
 
-const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+// const family = ['Peter', 'Ann', 'Alex', 'Linda'];
 
-function showFamily(arr) {
-  let string = '';
-  arr.length < 1 ? (string = 'Семья пуста') : (string = `Семья состоит из: `);
-  arr.forEach(m => (string += `${m} `));
-  console.log(string);
-}
-showFamily(family);
+// function showFamily(arr) {
+//   let string = '';
+//   arr.length < 1 ? (string = 'Семья пуста') : (string = `Семья состоит из: `);
+//   arr.forEach(m => (string += `${m} `));
+//   console.log(string);
+// }
+// showFamily(family);
 
-const someString = 'This is some strange string';
+// const someString = 'This is some strange string';
 
-function reverse(str) {
-  const rev = str.split(' ');
-  console.log(
-    rev.forEach(element => ()
-      element.split('').reverse().join('');
-  )),
-  );
-}
-reverse(someString);
+// function reverse(str) {
+//   const rev = str.split(' ');
+//   console.log(
+//     rev.forEach(element => ()
+//       element.split('').reverse().join('');
+//   )),
+//   );
+// }
+// reverse(someString);
 
-const baseCurrencies = ['USD', 'EUR'];
-const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+// const baseCurrencies = ['USD', 'EUR'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 
-function availableCurr(arr, missingCurr) {
-  if (arr.length < 1) return"Нет доступных валют"
-  const str = "Доступные валюты:\n"
-  arr.forEach(function (e, missingCurr) {
-    if (e !== missingCurr) {
-    str += `${e}\n`
+// function availableCurr(arr, missingCurr) {
+//   if (arr.length < 1) return"Нет доступных валют"
+//   const str = "Доступные валюты:\n"
+//   arr.forEach(function (e, missingCurr) {
+//     if (e !== missingCurr) {
+//     str += `${e}\n`
+//     }
+
+//   })
+//   return str
+// }
+// availableCurr([...baseCurrencies, ...additionalCurrencies], b)
+
+// const shoppingMallData = {
+//     shops: [
+//         {
+//             width: 10,
+//             length: 5
+//         },
+//         {
+//             width: 15,
+//             length: 7
+//         },
+//         {
+//             width: 20,
+//             length: 5
+//         },
+//         {
+//             width: 8,
+//             length: 10
+//         }
+//     ],
+//     height: 5,
+//     moneyPer1m3: 30,
+//     budget: 50000
+// }
+
+// function isBudgetEnough(data) {
+//   const { budget } = data;
+//   const { shops } = data;
+//   const { height } = data;
+//   const { moneyPer1m3 } = data;
+//   let space =0 ,
+//     volume =0 ;
+
+//   shops.forEach(e => {
+
+//     space += e.width * e.length
+//   })
+
+//   volume = space * height;
+//   moneyPer1m3 * volume > budget ? 'Бюджета достаточно' : 'Бюджета недостаточно'
+
+// }
+// isBudgetEnough(shoppingMallData)
+
+const students = [
+  'Peter',
+  'Andrew',
+  'Ann',
+  'Mark',
+  'Josh',
+  'Sandra',
+  'Cris',
+  'Bernard',
+  'Takesi',
+  'Sam',
+  'Takesi',
+];
+
+function sortStudentsByGroups(arr) {
+  const sort = arr.sort();
+  // console.log(sort);
+  const groups = [[], [], []];
+  const rest = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    if (i < 3) {
+      groups[0].push(sort[i]);
+    } else if (i < 6) {
+      groups[1].push(sort[i]);
+    } else if (i < 9) {
+      groups[2].push(sort[i]);
+    } else {
+      console.log(sort[i]);
+      rest.push(sort[i]);
     }
-    
-  })
-  return str
+  }
+  console.log([
+    ...groups,
+    `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(',')}`,
+  ]);
+  return [
+    ...groups,
+    `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(',')}`,
+  ];
 }
-availableCurr([...baseCurrencies,...additionalCurrencies], b)
+sortStudentsByGroups(students);
 // const sayHello = name => {
 //   console.log(name);
 //   return `Привет, ${name}!`;
