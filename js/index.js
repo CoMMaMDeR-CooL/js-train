@@ -108,6 +108,75 @@ function fib(num) {
   console.log(str.split('').join(' '));
 }
 fib(6);
+
+const personalPlanPeter = {
+  name: 'Peter',
+  age: '29',
+  skills: {
+    languages: ['ru', 'eng'],
+    programmingLangs: {
+      js: '20%',
+      php: '10%',
+    },
+    exp: '1 month',
+  },
+};
+
+function showExperience(plan) {
+  console.log(plan.skills.exp);
+}
+
+showExperience(personalPlanPeter);
+
+function showProgrammingLangs(plan) {
+  const { age } = plan.age;
+  const { programmingLangs } = plan.skills;
+  let string = '';
+  for (k in programmingLangs) {
+    string += `Язык ${k} изучен на ${programmingLangs[key]}\n`;
+  }
+  return string;
+}
+
+showProgrammingLangs(personalPlanPeter);
+
+const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+function showFamily(arr) {
+  let string = '';
+  arr.length < 1 ? (string = 'Семья пуста') : (string = `Семья состоит из: `);
+  arr.forEach(m => (string += `${m} `));
+  console.log(string);
+}
+showFamily(family);
+
+const someString = 'This is some strange string';
+
+function reverse(str) {
+  const rev = str.split(' ');
+  console.log(
+    rev.forEach(element => ()
+      element.split('').reverse().join('');
+  )),
+  );
+}
+reverse(someString);
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+function availableCurr(arr, missingCurr) {
+  if (arr.length < 1) return"Нет доступных валют"
+  const str = "Доступные валюты:\n"
+  arr.forEach(function (e, missingCurr) {
+    if (e !== missingCurr) {
+    str += `${e}\n`
+    }
+    
+  })
+  return str
+}
+availableCurr([...baseCurrencies,...additionalCurrencies], b)
 // const sayHello = name => {
 //   console.log(name);
 //   return `Привет, ${name}!`;
