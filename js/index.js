@@ -1,5 +1,112 @@
-// 'use strict';
+'use strict';
+let number = 5;
+function logNumber() {
+  console.log(number);
+}
+number = 6;
+logNumber();
 
+const getSum = function (a, b) {
+  console.log(typeof +'4');
+};
+const result = getSum(5, 6);
+for (let i = 1; i < 5; i++) {
+  console.log(i + 1);
+}
+function foo(a, b) {
+  const [first] = a;
+  const { eng } = b;
+
+  console.log(`${first} ${eng}`);
+}
+
+const result = foo(['Hello', 'Привет'], { ru: 'Мир', eng: 'World' });
+const restorantData = {
+  menu: [
+    {
+      name: 'Salad Caesar',
+      price: '14$',
+    },
+    {
+      name: 'Pizza Diavola',
+      price: '9$',
+    },
+    {
+      name: 'Beefsteak',
+      price: '17$',
+    },
+    {
+      name: 'Napoleon',
+      price: '7$',
+    },
+  ],
+  waitors: [
+    { name: 'Alice', age: 22 },
+    { name: 'John', age: 24 },
+  ],
+  averageLunchPrice: '20$',
+  openNow: true,
+};
+
+function transferWaitors(data) {
+  const copy = Object.assign({}, data);
+
+  copy.waitors[0] = { name: 'Mike', age: 32 };
+  return copy;
+}
+
+transferWaitors(restorantData);
+
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+  if (+fDish.price.slice(0, -1) + sDish.price.slice(0, -1) < average) {
+    return 'Цена ниже средней';
+  } else {
+    return 'Цена выше средней';
+  }
+}
+
+console.log(
+  isAverageLunchPriceTrue(
+    restorantData.menu[0],
+    restorantData.menu[1],
+    restorantData.averageLunchPrice,
+  ),
+);
+
+function isOpen(prop) {
+  let answer = '';
+  console.log(prop.openNow);
+  prop.openNow ? (answer = 'Открыто') : (answer = 'Закрыто');
+
+  return answer;
+}
+
+console.log(isOpen(restorantData));
+
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+  if (+fDish.price.slice(0, -1) + sDish.price < average) {
+    return 'Цена ниже средней';
+  } else {
+    return 'Цена выше средней';
+  }
+}
+
+console.log(
+  isAverageLunchPriceTrue(
+    restorantData.menu[0],
+    restorantData.menu[1],
+    restorantData.averageLunchPrice,
+  ),
+);
+
+function transferWaitors(data) {
+  const copy = Object.assign({}, data);
+
+  copy.waitors[0] = { name: 'Mike', age: 32 };
+  return copy;
+}
+
+transferWaitors(restorantData);
 // function calculateVolumeAndArea(num) {
 //   if (typeof num !== 'number' || num <= 0)
 //     return 'При вычислении произошла ошибка';
@@ -221,47 +328,47 @@
 // }
 // isBudgetEnough(shoppingMallData)
 
-const students = [
-  'Peter',
-  'Andrew',
-  'Ann',
-  'Mark',
-  'Josh',
-  'Sandra',
-  'Cris',
-  'Bernard',
-  'Takesi',
-  'Sam',
-  'Takesi',
-];
+// const students = [
+//   'Peter',
+//   'Andrew',
+//   'Ann',
+//   'Mark',
+//   'Josh',
+//   'Sandra',
+//   'Cris',
+//   'Bernard',
+//   'Takesi',
+//   'Sam',
+//   'Takesi',
+// ];
 
-function sortStudentsByGroups(arr) {
-  const sort = arr.sort();
-  // console.log(sort);
-  const groups = [[], [], []];
-  const rest = [];
-  for (let i = 0; i < arr.length; i += 1) {
-    if (i < 3) {
-      groups[0].push(sort[i]);
-    } else if (i < 6) {
-      groups[1].push(sort[i]);
-    } else if (i < 9) {
-      groups[2].push(sort[i]);
-    } else {
-      console.log(sort[i]);
-      rest.push(sort[i]);
-    }
-  }
-  console.log([
-    ...groups,
-    `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(',')}`,
-  ]);
-  return [
-    ...groups,
-    `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(',')}`,
-  ];
-}
-sortStudentsByGroups(students);
+// function sortStudentsByGroups(arr) {
+//   const sort = arr.sort();
+//   // console.log(sort);
+//   const groups = [[], [], []];
+//   const rest = [];
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (i < 3) {
+//       groups[0].push(sort[i]);
+//     } else if (i < 6) {
+//       groups[1].push(sort[i]);
+//     } else if (i < 9) {
+//       groups[2].push(sort[i]);
+//     } else {
+//       console.log(sort[i]);
+//       rest.push(sort[i]);
+//     }
+//   }
+//   console.log([
+//     ...groups,
+//     `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(',')}`,
+//   ]);
+//   return [
+//     ...groups,
+//     `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(',')}`,
+//   ];
+// }
+// sortStudentsByGroups(students);
 // const sayHello = name => {
 //   console.log(name);
 //   return `Привет, ${name}!`;
