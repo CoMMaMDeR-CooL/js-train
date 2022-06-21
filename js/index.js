@@ -1,112 +1,238 @@
 'use strict';
-let number = 5;
-function logNumber() {
-  console.log(number);
-}
-number = 6;
-logNumber();
-
-const getSum = function (a, b) {
-  console.log(typeof +'4');
+var obj = {
+  a: () => {
+    console.log(this.prop);
+  },
+  prop: 1,
 };
-const result = getSum(5, 6);
-for (let i = 1; i < 5; i++) {
-  console.log(i + 1);
-}
-function foo(a, b) {
-  const [first] = a;
-  const { eng } = b;
+obj.a();
+var fn = obj.a.bind(obj);
+fn();
 
-  console.log(`${first} ${eng}`);
+for (let i = 0; i < 10; i++) {
+  setTimeout(function f() {
+    console.log(i);
+  });
 }
 
-const result = foo(['Hello', 'Привет'], { ru: 'Мир', eng: 'World' });
-const restorantData = {
-  menu: [
-    {
-      name: 'Salad Caesar',
-      price: '14$',
-    },
-    {
-      name: 'Pizza Diavola',
-      price: '9$',
-    },
-    {
-      name: 'Beefsteak',
-      price: '17$',
-    },
-    {
-      name: 'Napoleon',
-      price: '7$',
-    },
-  ],
-  waitors: [
-    { name: 'Alice', age: 22 },
-    { name: 'John', age: 24 },
-  ],
-  averageLunchPrice: '20$',
-  openNow: true,
+// const obj1 = {
+//   x: 10,
+// };
+// const obj2 = Object.create(obj1);
+// console.log(obj2.x);
+
+// console.log('abc' === new String('abc'));
+
+// let a = 10;
+// a.b = 10;
+// console.log(a);
+
+// setTimeout(function timeout() {
+//   console.log('1');
+// }, 0);
+// Promise.resolve('2').then(console.log);
+// console.log('3');
+
+// const res = [5, 7, 9].slice(1);
+// res.pop();
+// res.push(4);
+// console.log(res);
+const meetupx = [
+  { name: 'JS', isA: true, memb: 100 },
+  { name: 'ang', isA: true, memb: 900 },
+  { name: 'node', isA: false, memb: 600 },
+  { name: 'react', isA: true, memb: 500 },
+];
+const res = meetupx =>
+  meetupx
+    .filter(meetup => meetup.isA)
+    .reduce((meetup, sum) => sum + meetup.memb, 0);
+console.log(res(meetupx));
+
+function foo() {}
+foo.x = 10;
+console.log(foo.x);
+
+const str = 'h2h40h';
+const res3 = str
+  .split('h')
+  .map(s => s + 10)
+  .filter(s => s.length < 4);
+console.log(res3);
+
+const a = {};
+function clear(obj) {
+  obj.x = 40;
+  obj = null;
+}
+clear(a);
+console.log(a);
+
+const s1 = ['a', 'b', 'c'];
+const s2 = ['d', 'e', 'f'];
+const res = s1.concat(s2).join('+');
+console.log(res);
+var a = {};
+(function b(a) {
+  a.a = 10;
+  a = null;
+})(a);
+console.log(a);
+
+const obj = { x: 10, y: 20 };
+const prop = Object.keys(obj).reverse().join('');
+obj.xy = 30;
+obj.yx = 40;
+obj.x10y20 = 50;
+obj.y20x10 = 60;
+const res4 = obj[prop];
+console.log(res4);
+
+async function bar() {
+  return Promise.resolve(10);
+}
+async function foo() {}
+const res1 = foo();
+const res2 = bar();
+console.log(res1, res2);
+var a = 'hello';
+function b() {
+  if (false) {
+    vara = 'world';
+  } else {
+    var b = 'man';
+  }
+  console.log(b);
+  console.log(a);
+}
+b();
+const obj = {
+  x: 10,
+  y: 20,
+  z: 30,
 };
+console.log(Object.values(obj));
 
-function transferWaitors(data) {
-  const copy = Object.assign({}, data);
+const num = [-2, 4, -1, 6, 8];
+console.log(num.filter(n => n > 0).map(n => n * 2));
+Promise.reject('a')
+  .catch(p => p + 'b')
+  .catch(p => p + 'c')
+  .then(p => p + 'd')
+  .finally(p => p + 'e')
+  .then(p => console.log(p));
 
-  copy.waitors[0] = { name: 'Mike', age: 32 };
-  return copy;
-}
+var obj = {
+  a: () => {},
+};
+// let number = 5;
+// function logNumber() {
+//   console.log(number);
+// }
+// number = 6;
+// logNumber();
 
-transferWaitors(restorantData);
+// const getSum = function (a, b) {
+//   console.log(typeof +'4');
+// };
+// const result = getSum(5, 6);
+// for (let i = 1; i < 5; i++) {
+//   console.log(i + 1);
+// }
+// function foo(a, b) {
+//   const [first] = a;
+//   const { eng } = b;
 
-function isAverageLunchPriceTrue(fDish, sDish, average) {
-  if (+fDish.price.slice(0, -1) + sDish.price.slice(0, -1) < average) {
-    return 'Цена ниже средней';
-  } else {
-    return 'Цена выше средней';
-  }
-}
+//   console.log(`${first} ${eng}`);
+// }
 
-console.log(
-  isAverageLunchPriceTrue(
-    restorantData.menu[0],
-    restorantData.menu[1],
-    restorantData.averageLunchPrice,
-  ),
-);
+// const result = foo(['Hello', 'Привет'], { ru: 'Мир', eng: 'World' });
+// const restorantData = {
+//   menu: [
+//     {
+//       name: 'Salad Caesar',
+//       price: '14$',
+//     },
+//     {
+//       name: 'Pizza Diavola',
+//       price: '9$',
+//     },
+//     {
+//       name: 'Beefsteak',
+//       price: '17$',
+//     },
+//     {
+//       name: 'Napoleon',
+//       price: '7$',
+//     },
+//   ],
+//   waitors: [
+//     { name: 'Alice', age: 22 },
+//     { name: 'John', age: 24 },
+//   ],
+//   averageLunchPrice: '20$',
+//   openNow: true,
+// };
 
-function isOpen(prop) {
-  let answer = '';
-  console.log(prop.openNow);
-  prop.openNow ? (answer = 'Открыто') : (answer = 'Закрыто');
+// function transferWaitors(data) {
+//   const copy = Object.assign({}, data);
 
-  return answer;
-}
+//   copy.waitors[0] = { name: 'Mike', age: 32 };
+//   return copy;
+// }
 
-console.log(isOpen(restorantData));
+// transferWaitors(restorantData);
 
-function isAverageLunchPriceTrue(fDish, sDish, average) {
-  if (+fDish.price.slice(0, -1) + sDish.price < average) {
-    return 'Цена ниже средней';
-  } else {
-    return 'Цена выше средней';
-  }
-}
+// function isAverageLunchPriceTrue(fDish, sDish, average) {
+//   if (+fDish.price.slice(0, -1) + sDish.price.slice(0, -1) < average) {
+//     return 'Цена ниже средней';
+//   } else {
+//     return 'Цена выше средней';
+//   }
+// }
 
-console.log(
-  isAverageLunchPriceTrue(
-    restorantData.menu[0],
-    restorantData.menu[1],
-    restorantData.averageLunchPrice,
-  ),
-);
+// console.log(
+//   isAverageLunchPriceTrue(
+//     restorantData.menu[0],
+//     restorantData.menu[1],
+//     restorantData.averageLunchPrice,
+//   ),
+// );
 
-function transferWaitors(data) {
-  const copy = Object.assign({}, data);
+// function isOpen(prop) {
+//   let answer = '';
+//   console.log(prop.openNow);
+//   prop.openNow ? (answer = 'Открыто') : (answer = 'Закрыто');
 
-  copy.waitors[0] = { name: 'Mike', age: 32 };
-  return copy;
-}
+//   return answer;
+// }
 
-transferWaitors(restorantData);
+// console.log(isOpen(restorantData));
+
+// function isAverageLunchPriceTrue(fDish, sDish, average) {
+//   if (+fDish.price.slice(0, -1) + sDish.price < average) {
+//     return 'Цена ниже средней';
+//   } else {
+//     return 'Цена выше средней';
+//   }
+// }
+
+// console.log(
+//   isAverageLunchPriceTrue(
+//     restorantData.menu[0],
+//     restorantData.menu[1],
+//     restorantData.averageLunchPrice,
+//   ),
+// );
+
+// function transferWaitors(data) {
+//   const copy = Object.assign({}, data);
+
+//   copy.waitors[0] = { name: 'Mike', age: 32 };
+//   return copy;
+// }
+
+// transferWaitors(restorantData);
 // function calculateVolumeAndArea(num) {
 //   if (typeof num !== 'number' || num <= 0)
 //     return 'При вычислении произошла ошибка';
